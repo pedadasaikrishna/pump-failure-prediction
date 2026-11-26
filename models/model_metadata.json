@@ -1,0 +1,106 @@
+{
+  "model_name": "random_forest",
+  "trained_on_rows": 9600,
+  "test_rows": 2400,
+  "numeric_features": [
+    "Age_Years",
+    "Operating_Hours",
+    "Duty_Cycle_Pct",
+    "Rotational_Speed_RPM",
+    "Flow_Rate_m3h",
+    "Suction_Pressure_bar",
+    "Discharge_Pressure_bar",
+    "Vibration_X_mm_s",
+    "Vibration_Y_mm_s",
+    "Motor_Current_A",
+    "Motor_Temperature_C",
+    "Bearing_Temperature_C",
+    "Seal_Leak_Rate_ml_min",
+    "Ambient_Temperature_C",
+    "Maintenance_Quality_Score",
+    "Vibration_Resultant_mm_s",
+    "Temp_Differential_C",
+    "Pressure_Ratio",
+    "Specific_Energy_Index"
+  ],
+  "categorical_features": [
+    "Pump_Type"
+  ],
+  "selected_threshold": 0.6109,
+  "test_metrics_at_selected_threshold": {
+    "threshold": 0.611,
+    "accuracy": 0.9629,
+    "precision": 0.6398,
+    "recall": 0.7687,
+    "f1": 0.6983,
+    "roc_auc": 0.9069,
+    "avg_precision": 0.641,
+    "tn": 2208,
+    "fp": 58,
+    "fn": 31,
+    "tp": 103
+  },
+  "test_metrics_at_default_0.5": {
+    "threshold": 0.5,
+    "accuracy": 0.9617,
+    "precision": 0.6167,
+    "recall": 0.8284,
+    "f1": 0.707,
+    "roc_auc": 0.9069,
+    "avg_precision": 0.641,
+    "tn": 2197,
+    "fp": 69,
+    "fn": 23,
+    "tp": 111
+  },
+  "cv_model_comparison": [
+    {
+      "model": "random_forest",
+      "cv_f1_mean": 0.7223650732056893,
+      "cv_f1_std": 0.019961911913799615,
+      "cv_roc_auc_mean": 0.9261429653953019,
+      "cv_roc_auc_std": 0.015751064059394557,
+      "cv_avg_precision_mean": 0.7022300370481649,
+      "cv_precision_mean": 0.6379205445493576,
+      "cv_recall_mean": 0.8336448598130841,
+      "fit_time_s": 25.76
+    },
+    {
+      "model": "gradient_boosting",
+      "cv_f1_mean": 0.6744063593672418,
+      "cv_f1_std": 0.018318821161831308,
+      "cv_roc_auc_mean": 0.9233572691516617,
+      "cv_roc_auc_std": 0.01757408076495584,
+      "cv_avg_precision_mean": 0.6851250562791326,
+      "cv_precision_mean": 0.7003627529400724,
+      "cv_recall_mean": 0.6523364485981308,
+      "fit_time_s": 55.96
+    },
+    {
+      "model": "logistic_regression",
+      "cv_f1_mean": 0.39237621934381206,
+      "cv_f1_std": 0.016923563548902985,
+      "cv_roc_auc_mean": 0.898053002458877,
+      "cv_roc_auc_std": 0.019716432450942765,
+      "cv_avg_precision_mean": 0.529317636938649,
+      "cv_precision_mean": 0.2570019091188557,
+      "cv_recall_mean": 0.8317757009345794,
+      "fit_time_s": 0.72
+    }
+  ],
+  "data_validation_report": {
+    "n_rows_raw": 12015,
+    "n_exact_duplicates": 15,
+    "missing_by_column": {
+      "Suction_Pressure_bar": 144,
+      "Seal_Leak_Rate_ml_min": 240,
+      "Ambient_Temperature_C": 96
+    },
+    "range_violations": {
+      "Vibration_X_mm_s": 13
+    },
+    "n_rows_clean": 12000
+  },
+  "sklearn_version": "1.9.1",
+  "random_state": 42
+}

@@ -1,0 +1,3 @@
+split,threshold,accuracy,precision,recall,f1,roc_auc,avg_precision,tn,fp,fn,tp
+train+val (in-sample),0.611,0.9793,0.771,0.8935,0.8277,0.9957,0.9465,8923,142,57,478
+held-out test,0.611,0.9629,0.6398,0.7687,0.6983,0.9069,0.641,2208,58,31,103
